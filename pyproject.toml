@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools==84.0.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "taskpilot"
+version = "0.1.0"
+description = "可评测的研发故障分析 Agent"
+requires-python = ">=3.11,<3.15"
+dependencies = ["fastapi", "uvicorn", "pydantic-settings"]
+
+[project.optional-dependencies]
+test = ["pytest", "httpx"]
+
+[tool.setuptools.packages.find]
+include = ["app", "app.*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
