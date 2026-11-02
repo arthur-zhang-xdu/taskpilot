@@ -23,3 +23,10 @@ class Settings(BaseSettings):
     llm_base_url: str = ""
     llm_model: str = ""
     llm_timeout_seconds: float = Field(default=30, gt=0, allow_inf_nan=False)
+
+    database_url: SecretStr = SecretStr("")
+    postgres_user: str = ""
+    postgres_db: str = ""
+    postgres_password: SecretStr = SecretStr("")
+    postgres_host: str = "127.0.0.1"
+    postgres_port: int = Field(default=5432, ge=1, le=65535)
